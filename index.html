@@ -967,6 +967,39 @@ a.matrix__metric:hover { text-decoration: underline; }
   text-overflow: ellipsis;
 }
 .browser-frame video { display: block; width: 100%; height: auto; }
+.site-reels {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+}
+.site-reel { margin: 0; }
+.site-reel__media {
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--stroke-2);
+  background: #0b0b12;
+  box-shadow: 0 40px 90px -30px rgba(0,0,0,0.7);
+  aspect-ratio: 16 / 9;
+}
+.site-reel__media video { display: block; width: 100%; height: 100%; object-fit: cover; }
+.site-reel__caption {
+  margin-top: 14px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+.site-reel__name { font-weight: 600; color: var(--white); }
+.site-reel__url {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+@media (max-width: 900px) {
+  .site-reels { grid-template-columns: 1fr; gap: 36px; }
+}
 .featured-build__meta {
   margin-top: 36px;
   display: flex;
@@ -1533,7 +1566,7 @@ a.matrix__metric:hover { text-decoration: underline; }
 
   <header class="nav" id="nav">
     <a href="#home" class="nav__logo" data-scroll aria-label="Akash — home">
-      <img src="assets/logo-ab.png" alt="Akash logo" class="nav__logo-img" />
+      <img src="logo-ab.png" alt="Akash logo" class="nav__logo-img" />
     </a>
     <nav class="nav__links" aria-label="Primary">
       <a href="#home" data-scroll>Home</a>
@@ -1580,7 +1613,7 @@ a.matrix__metric:hover { text-decoration: underline; }
         <div class="hero__visual">
           <div class="portrait" id="portrait">
             <div class="portrait__glow"></div>
-            <img src="assets/akash-portrait-hero.png" alt="Portrait of Akash" class="portrait__img" id="portraitFrame" />
+            <img src="akash-portrait-hero.png" alt="Portrait of Akash" class="portrait__img" id="portraitFrame" />
           </div>
         </div>
       </div>
@@ -1591,10 +1624,51 @@ a.matrix__metric:hover { text-decoration: underline; }
       </div>
     </section>
 
+    <!-- ================= FEATURED BUILDS — WEBSITES ================= -->
+    <section class="section featured-build" id="featured-build">
+      <div class="section__head">
+        <span class="section__index">01 — Featured Builds</span>
+        <h2 class="section__title">Live Websites, <span class="accent">Designed &amp; Built</span> End-to-End.</h2>
+        <p class="section__lead">Beyond media buying and automation, I design and ship full production websites. Two recent builds: the homepage for Dreamland Real Estate Brokerage, live in Dubai's real estate market, and the brand website for Mirvana Furniture.</p>
+      </div>
+      <div class="site-reels">
+        <figure class="site-reel">
+          <div class="site-reel__media">
+            <video preload="metadata" muted loop playsinline data-lazy-play aria-label="Screen recording of the Dreamland Real Estate website">
+              <source src="website-dreamland.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <figcaption class="site-reel__caption">
+            <span class="site-reel__name">Dreamland Real Estate</span>
+            <span class="site-reel__url">dreamlanddubai.ae</span>
+          </figcaption>
+        </figure>
+        <figure class="site-reel">
+          <div class="site-reel__media">
+            <video preload="metadata" muted loop playsinline data-lazy-play aria-label="Screen recording of the Mirvana Furniture website">
+              <source src="website-mirvana.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <figcaption class="site-reel__caption">
+            <span class="site-reel__name">Mirvana Furniture</span>
+            <span class="site-reel__url">Brand website</span>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="featured-build__meta">
+        <div class="featured-build__stack">
+          <span class="chip">GSAP</span>
+          <span class="chip">ScrollTrigger</span>
+          <span class="chip">WordPress</span>
+          <span class="chip">Elementor</span>
+        </div>
+      </div>
+    </section>
+
     <!-- ================= PAID MEDIA — META ADS ================= -->
     <section class="section paid" id="paid-media">
       <div class="section__head">
-        <span class="section__index">01 — Paid Media · Meta Ads</span>
+        <span class="section__index">02 — Paid Media · Meta Ads</span>
         <h2 class="section__title">
           Meta Performance Frameworks, built to <span class="accent">scale.</span>
         </h2>
@@ -1621,16 +1695,16 @@ a.matrix__metric:hover { text-decoration: underline; }
               <strong>3x</strong><span>CTR Jump (0.70% → 2.13%)</span>
             </div>
           </div>
-          <a href="assets/al-barsha-villas-case-study.pdf" download="Case_Study_Al_Barsha_Villas.pdf" class="btn btn--case">
+          <a href="al-barsha-villas-case-study.pdf" download="Case_Study_Al_Barsha_Villas.pdf" class="btn btn--case">
             Read Full Case Study (PDF)
             <svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </div>
         <div class="campaign__gallery">
-          <img src="assets/al-barsha-villas-creative-01.jpg" alt="Al Barsha Villas campaign creative 1" loading="lazy" />
-          <img src="assets/al-barsha-villas-creative-02.jpg" alt="Al Barsha Villas campaign creative 2" loading="lazy" />
-          <img src="assets/al-barsha-villas-creative-03.jpg" alt="Al Barsha Villas campaign creative 3" loading="lazy" />
-          <img src="assets/al-barsha-villas-creative-04.jpg" alt="Al Barsha Villas campaign creative 4" loading="lazy" />
+          <img src="al-barsha-villas-creative-01.jpg" alt="Al Barsha Villas campaign creative 1" loading="lazy" />
+          <img src="al-barsha-villas-creative-02.jpg" alt="Al Barsha Villas campaign creative 2" loading="lazy" />
+          <img src="al-barsha-villas-creative-03.jpg" alt="Al Barsha Villas campaign creative 3" loading="lazy" />
+          <img src="al-barsha-villas-creative-04.jpg" alt="Al Barsha Villas campaign creative 4" loading="lazy" />
         </div>
       </article>
 
@@ -1650,16 +1724,16 @@ a.matrix__metric:hover { text-decoration: underline; }
               <strong>AED 545K/yr</strong><span>Lease Generated</span>
             </div>
           </div>
-          <a href="assets/ras-al-khor-warehouses-case-study.pdf" download="Case_Study_Ras_Al_Khor_Warehouses.pdf" class="btn btn--case">
+          <a href="ras-al-khor-warehouses-case-study.pdf" download="Case_Study_Ras_Al_Khor_Warehouses.pdf" class="btn btn--case">
             Read Full Case Study (PDF)
             <svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </div>
         <div class="campaign__gallery">
-          <img src="assets/ras-al-khor-warehouses-creative-01.jpg" alt="Ras Al Khor Warehouses campaign creative 1" loading="lazy" />
-          <img src="assets/ras-al-khor-warehouses-creative-02.jpg" alt="Ras Al Khor Warehouses campaign creative 2" loading="lazy" />
-          <img src="assets/ras-al-khor-warehouses-creative-03.jpg" alt="Ras Al Khor Warehouses campaign creative 3" loading="lazy" />
-          <img src="assets/ras-al-khor-warehouses-creative-04.jpg" alt="Ras Al Khor Warehouses campaign creative 4" loading="lazy" />
+          <img src="ras-al-khor-warehouses-creative-01.jpg" alt="Ras Al Khor Warehouses campaign creative 1" loading="lazy" />
+          <img src="ras-al-khor-warehouses-creative-02.jpg" alt="Ras Al Khor Warehouses campaign creative 2" loading="lazy" />
+          <img src="ras-al-khor-warehouses-creative-03.jpg" alt="Ras Al Khor Warehouses campaign creative 3" loading="lazy" />
+          <img src="ras-al-khor-warehouses-creative-04.jpg" alt="Ras Al Khor Warehouses campaign creative 4" loading="lazy" />
         </div>
       </article>
 
@@ -1677,12 +1751,12 @@ a.matrix__metric:hover { text-decoration: underline; }
           <tbody>
             <tr>
               <td>
-                <a href="assets/al-barsha-villas-case-study.pdf" download="Case_Study_Al_Barsha_Villas.pdf" class="matrix__link">
+                <a href="al-barsha-villas-case-study.pdf" download="Case_Study_Al_Barsha_Villas.pdf" class="matrix__link">
                   Al Barsha Luxury Villas <span class="pdf-chip">PDF</span>
                 </a>
               </td>
               <td>
-                <a href="assets/al-barsha-villas-case-study.pdf" download="Case_Study_Al_Barsha_Villas.pdf" class="matrix__metric">
+                <a href="al-barsha-villas-case-study.pdf" download="Case_Study_Al_Barsha_Villas.pdf" class="matrix__metric">
                   76% CPL Reduction <span class="matrix__sub">(AED 85 → AED 20)</span> <span class="pdf-chip">PDF</span>
                 </a>
               </td>
@@ -1690,7 +1764,7 @@ a.matrix__metric:hover { text-decoration: underline; }
             </tr>
             <tr>
               <td>
-                <a href="assets/ras-al-khor-warehouses-case-study.pdf" download="Case_Study_Ras_Al_Khor_Warehouses.pdf" class="matrix__link">
+                <a href="ras-al-khor-warehouses-case-study.pdf" download="Case_Study_Ras_Al_Khor_Warehouses.pdf" class="matrix__link">
                   Ras Al Khor Warehouses <span class="pdf-chip">PDF</span>
                 </a>
               </td>
@@ -1707,59 +1781,31 @@ a.matrix__metric:hover { text-decoration: underline; }
     <!-- ================= AI CREATIVE VAULT (horizontal scroll) ================= -->
     <section class="vault" id="creative-vault">
       <div class="section__head vault__head">
-        <span class="section__index">02 — AI Creative Vault</span>
+        <span class="section__index">03 — AI Creative Vault</span>
         <h2 class="section__title">Creatives built at <span class="accent">machine speed.</span></h2>
         <p class="section__lead">A living reel of AI-generated ad videos, carousels, and static performance creatives — engineered to test, iterate, and win the auction. Drag to spin, or click any tile to bring it to the front.</p>
       </div>
       <div class="carousel" id="creativeCarousel">
         <div class="carousel__stage">
-          <figure class="carousel__item" data-kind="img"><img loading="lazy" src="assets/ai-creative-01.jpg" alt="AI ad creative" /></figure>
-          <figure class="carousel__item" data-kind="img"><img loading="lazy" src="assets/ai-creative-02.jpg" alt="AI ad creative" /></figure>
-          <figure class="carousel__item" data-kind="video"><video muted loop playsinline preload="metadata" data-lazy-play><source src="assets/ai-video-1.mp4" type="video/mp4" /></video></figure>
-          <figure class="carousel__item" data-kind="img"><img loading="lazy" src="assets/ai-creative-03.jpg" alt="AI ad creative" /></figure>
-          <figure class="carousel__item" data-kind="img"><img loading="lazy" src="assets/ai-creative-04.jpg" alt="AI ad creative" /></figure>
-          <figure class="carousel__item" data-kind="carousel"><div class="cslides"><img loading="lazy" class="cslide is-active" src="assets/ai-carousel-1-slide-01.jpg" alt="Carousel slide 1" /><img loading="lazy" class="cslide" src="assets/ai-carousel-1-slide-02.jpg" alt="Carousel slide 2" /><img loading="lazy" class="cslide" src="assets/ai-carousel-1-slide-03.jpg" alt="Carousel slide 3" /><img loading="lazy" class="cslide" src="assets/ai-carousel-1-slide-04.jpg" alt="Carousel slide 4" /><img loading="lazy" class="cslide" src="assets/ai-carousel-1-slide-05.jpg" alt="Carousel slide 5" /><img loading="lazy" class="cslide" src="assets/ai-carousel-1-slide-06.jpg" alt="Carousel slide 6" /></div><span class="carousel__badge">Carousel</span></figure>
-          <figure class="carousel__item" data-kind="img"><img loading="lazy" src="assets/ai-creative-05.jpg" alt="AI ad creative" /></figure>
-          <figure class="carousel__item" data-kind="img"><img loading="lazy" src="assets/ai-creative-06.jpg" alt="AI ad creative" /></figure>
-          <figure class="carousel__item" data-kind="video"><video muted loop playsinline preload="metadata" data-lazy-play><source src="assets/ai-video-2.mp4" type="video/mp4" /></video></figure>
-          <figure class="carousel__item" data-kind="img"><img loading="lazy" src="assets/ai-creative-07.jpg" alt="AI ad creative" /></figure>
-          <figure class="carousel__item" data-kind="img"><img loading="lazy" src="assets/ai-creative-08.jpg" alt="AI ad creative" /></figure>
-          <figure class="carousel__item" data-kind="carousel"><div class="cslides"><img loading="lazy" class="cslide is-active" src="assets/ai-carousel-2-slide-01.jpg" alt="Carousel slide 1" /><img loading="lazy" class="cslide" src="assets/ai-carousel-2-slide-02.jpg" alt="Carousel slide 2" /><img loading="lazy" class="cslide" src="assets/ai-carousel-2-slide-03.jpg" alt="Carousel slide 3" /><img loading="lazy" class="cslide" src="assets/ai-carousel-2-slide-04.jpg" alt="Carousel slide 4" /><img loading="lazy" class="cslide" src="assets/ai-carousel-2-slide-05.jpg" alt="Carousel slide 5" /><img loading="lazy" class="cslide" src="assets/ai-carousel-2-slide-06.jpg" alt="Carousel slide 6" /></div><span class="carousel__badge">Carousel</span></figure>
-          <figure class="carousel__item" data-kind="img"><img loading="lazy" src="assets/ai-creative-09.jpg" alt="AI ad creative" /></figure>
-          <figure class="carousel__item" data-kind="img"><img loading="lazy" src="assets/ai-creative-10.jpg" alt="AI ad creative" /></figure>
+          <figure class="carousel__item" data-kind="img"><img loading="lazy" src="ai-creative-01.jpg" alt="AI ad creative" /></figure>
+          <figure class="carousel__item" data-kind="img"><img loading="lazy" src="ai-creative-02.jpg" alt="AI ad creative" /></figure>
+          <figure class="carousel__item" data-kind="video"><video muted loop playsinline preload="metadata" data-lazy-play><source src="ai-video-1.mp4" type="video/mp4" /></video></figure>
+          <figure class="carousel__item" data-kind="img"><img loading="lazy" src="ai-creative-03.jpg" alt="AI ad creative" /></figure>
+          <figure class="carousel__item" data-kind="img"><img loading="lazy" src="ai-creative-04.jpg" alt="AI ad creative" /></figure>
+          <figure class="carousel__item" data-kind="carousel"><div class="cslides"><img loading="lazy" class="cslide is-active" src="ai-carousel-1-slide-01.jpg" alt="Carousel slide 1" /><img loading="lazy" class="cslide" src="ai-carousel-1-slide-02.jpg" alt="Carousel slide 2" /><img loading="lazy" class="cslide" src="ai-carousel-1-slide-03.jpg" alt="Carousel slide 3" /><img loading="lazy" class="cslide" src="ai-carousel-1-slide-04.jpg" alt="Carousel slide 4" /><img loading="lazy" class="cslide" src="ai-carousel-1-slide-05.jpg" alt="Carousel slide 5" /><img loading="lazy" class="cslide" src="ai-carousel-1-slide-06.jpg" alt="Carousel slide 6" /></div><span class="carousel__badge">Carousel</span></figure>
+          <figure class="carousel__item" data-kind="img"><img loading="lazy" src="ai-creative-05.jpg" alt="AI ad creative" /></figure>
+          <figure class="carousel__item" data-kind="img"><img loading="lazy" src="ai-creative-06.jpg" alt="AI ad creative" /></figure>
+          <figure class="carousel__item" data-kind="video"><video muted loop playsinline preload="metadata" data-lazy-play><source src="ai-video-2.mp4" type="video/mp4" /></video></figure>
+          <figure class="carousel__item" data-kind="img"><img loading="lazy" src="ai-creative-07.jpg" alt="AI ad creative" /></figure>
+          <figure class="carousel__item" data-kind="img"><img loading="lazy" src="ai-creative-08.jpg" alt="AI ad creative" /></figure>
+          <figure class="carousel__item" data-kind="carousel"><div class="cslides"><img loading="lazy" class="cslide is-active" src="ai-carousel-2-slide-01.jpg" alt="Carousel slide 1" /><img loading="lazy" class="cslide" src="ai-carousel-2-slide-02.jpg" alt="Carousel slide 2" /><img loading="lazy" class="cslide" src="ai-carousel-2-slide-03.jpg" alt="Carousel slide 3" /><img loading="lazy" class="cslide" src="ai-carousel-2-slide-04.jpg" alt="Carousel slide 4" /><img loading="lazy" class="cslide" src="ai-carousel-2-slide-05.jpg" alt="Carousel slide 5" /><img loading="lazy" class="cslide" src="ai-carousel-2-slide-06.jpg" alt="Carousel slide 6" /></div><span class="carousel__badge">Carousel</span></figure>
+          <figure class="carousel__item" data-kind="img"><img loading="lazy" src="ai-creative-09.jpg" alt="AI ad creative" /></figure>
+          <figure class="carousel__item" data-kind="img"><img loading="lazy" src="ai-creative-10.jpg" alt="AI ad creative" /></figure>
         </div>
         <button class="carousel__nav carousel__nav--prev" aria-label="Previous creative" type="button">&#8249;</button>
         <button class="carousel__nav carousel__nav--next" aria-label="Next creative" type="button">&#8250;</button>
       </div>
       <p class="carousel__hint">drag &nbsp;/&nbsp; click a tile &nbsp;/&nbsp; use the arrows</p>
-    </section>
-
-    <!-- ================= FEATURED BUILD ================= -->
-    <section class="section featured-build" id="featured-build">
-      <div class="section__head">
-        <span class="section__index">03 — Featured Build</span>
-        <h2 class="section__title">A Live Website, <span class="accent">Designed &amp; Built</span> End-to-End.</h2>
-        <p class="section__lead">Beyond media buying and automation, I design and ship full production websites. This is the scroll-driven, GSAP-animated homepage I built for Dreamland Real Estate Brokerage — live in Dubai's real estate market today.</p>
-      </div>
-      <div class="browser-frame">
-        <div class="browser-frame__bar">
-          <span class="browser-frame__dot browser-frame__dot--red"></span>
-          <span class="browser-frame__dot browser-frame__dot--yellow"></span>
-          <span class="browser-frame__dot browser-frame__dot--green"></span>
-          <span class="browser-frame__url">dreamlanddubai.ae</span>
-        </div>
-        <video preload="metadata" muted loop playsinline data-lazy-play>
-          <source src="assets/website-showcase.mp4" type="video/mp4" />
-        </video>
-      </div>
-      <div class="featured-build__meta">
-        <div class="featured-build__stack">
-          <span class="chip">GSAP</span>
-          <span class="chip">ScrollTrigger</span>
-          <span class="chip">WordPress</span>
-          <span class="chip">Elementor</span>
-        </div>
-      </div>
     </section>
 
     <!-- ================= AI CREATIVE STACK ================= -->
@@ -1771,43 +1817,43 @@ a.matrix__metric:hover { text-decoration: underline; }
       </div>
       <div class="stack-grid">
         <div class="stack-logo">
-          <span class="stack-logo__mark"><img loading="lazy" src="assets/logo-canva.png" alt="Canva" /></span>
+          <span class="stack-logo__mark"><img loading="lazy" src="logo-canva.png" alt="Canva" /></span>
           <span class="stack-logo__name">Canva</span>
         </div>
         <div class="stack-logo">
-          <span class="stack-logo__mark"><img loading="lazy" src="assets/logo-wordpress.png" alt="WordPress" /></span>
+          <span class="stack-logo__mark"><img loading="lazy" src="logo-wordpress.png" alt="WordPress" /></span>
           <span class="stack-logo__name">WordPress</span>
         </div>
         <div class="stack-logo">
-          <span class="stack-logo__mark"><img loading="lazy" src="assets/logo-claude.png" alt="Claude" /></span>
+          <span class="stack-logo__mark"><img loading="lazy" src="logo-claude.png" alt="Claude" /></span>
           <span class="stack-logo__name">Claude</span>
         </div>
         <div class="stack-logo">
-          <span class="stack-logo__mark"><img loading="lazy" src="assets/logo-openai.png" alt="OpenAI" /></span>
+          <span class="stack-logo__mark"><img loading="lazy" src="logo-openai.png" alt="OpenAI" /></span>
           <span class="stack-logo__name">OpenAI</span>
         </div>
         <div class="stack-logo">
-          <span class="stack-logo__mark"><img loading="lazy" src="assets/logo-elevenlabs.png" alt="ElevenLabs" /></span>
+          <span class="stack-logo__mark"><img loading="lazy" src="logo-elevenlabs.png" alt="ElevenLabs" /></span>
           <span class="stack-logo__name">ElevenLabs</span>
         </div>
         <div class="stack-logo">
-          <span class="stack-logo__mark"><img loading="lazy" src="assets/logo-runway.png" alt="Runway ML" /></span>
+          <span class="stack-logo__mark"><img loading="lazy" src="logo-runway.png" alt="Runway ML" /></span>
           <span class="stack-logo__name">Runway ML</span>
         </div>
         <div class="stack-logo">
-          <span class="stack-logo__mark"><img loading="lazy" src="assets/logo-midjourney.png" alt="MidJourney" /></span>
+          <span class="stack-logo__mark"><img loading="lazy" src="logo-midjourney.png" alt="MidJourney" /></span>
           <span class="stack-logo__name">MidJourney</span>
         </div>
         <div class="stack-logo">
-          <span class="stack-logo__mark"><img loading="lazy" src="assets/logo-magnific.png" alt="Magnific" /></span>
+          <span class="stack-logo__mark"><img loading="lazy" src="logo-magnific.png" alt="Magnific" /></span>
           <span class="stack-logo__name">Magnific</span>
         </div>
         <div class="stack-logo">
-          <span class="stack-logo__mark"><img loading="lazy" src="assets/logo-heygen.png" alt="HeyGen" /></span>
+          <span class="stack-logo__mark"><img loading="lazy" src="logo-heygen.png" alt="HeyGen" /></span>
           <span class="stack-logo__name">HeyGen</span>
         </div>
         <div class="stack-logo">
-          <span class="stack-logo__mark"><img loading="lazy" src="assets/logo-higgsfield.png" alt="Higgsfield" /></span>
+          <span class="stack-logo__mark"><img loading="lazy" src="logo-higgsfield.png" alt="Higgsfield" /></span>
           <span class="stack-logo__name">Higgsfield</span>
         </div>
       </div>
@@ -1841,11 +1887,11 @@ a.matrix__metric:hover { text-decoration: underline; }
           <div class="wf-card__tag"><span class="dot"></span> n8n · CRM Pipeline</div>
           <div class="wf-card__media wf-card__slider" data-slider>
             <div class="slider__track">
-              <img src="assets/pf-crm-wordpress-sync-step-01.jpg"
+              <img src="pf-crm-wordpress-sync-step-01.jpg"
                    alt="Property Finder CRM to WordPress sync — step 1" loading="lazy" />
-              <img src="assets/pf-crm-wordpress-sync-step-02.jpg"
+              <img src="pf-crm-wordpress-sync-step-02.jpg"
                    alt="Property Finder CRM to WordPress sync — step 2" loading="lazy" />
-              <img src="assets/pf-crm-wordpress-sync-step-03.jpg"
+              <img src="pf-crm-wordpress-sync-step-03.jpg"
                    alt="Property Finder CRM to WordPress sync — step 3" loading="lazy" />
             </div>
             <button class="slider__nav slider__nav--prev" aria-label="Previous image" type="button">‹</button>
@@ -1857,7 +1903,7 @@ a.matrix__metric:hover { text-decoration: underline; }
             An automated bridge syncing Property Finder / CRM listings straight into
             WordPress — deduped, enriched, and published with zero manual entry.
           </p>
-          <a href="assets/pf-crm-wordpress-sync-case-study.pdf" download="Case_Study_PF_to_WordPress_Automated_Sync.pdf" class="btn btn--case">
+          <a href="pf-crm-wordpress-sync-case-study.pdf" download="Case_Study_PF_to_WordPress_Automated_Sync.pdf" class="btn btn--case">
             Download Complete Technical Case Study (PDF)
             <svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
@@ -1867,14 +1913,14 @@ a.matrix__metric:hover { text-decoration: underline; }
         <article class="wf-card" data-tilt>
           <div class="wf-card__tag"><span class="dot"></span> n8n · SEO Engine</div>
           <div class="wf-card__media">
-            <img src="assets/seo-blog-engine-workflow.jpg" alt="Automating Dubai real estate blog content with n8n + GPT" loading="lazy" />
+            <img src="seo-blog-engine-workflow.jpg" alt="Automating Dubai real estate blog content with n8n + GPT" loading="lazy" />
           </div>
           <h3 class="wf-card__title">Automated SEO Engine</h3>
           <p class="wf-card__desc">
             A self-running content machine — topic research, drafting, and daily blog
             publishing on autopilot, keeping the domain compounding organic authority.
           </p>
-          <a href="assets/dubai-blog-content-engine-case-study.pdf" download="Case_Study_Dubai_Blog_Content_Engine.pdf" data-pdf-open target="_blank" rel="noopener noreferrer" class="btn btn--case">
+          <a href="dubai-blog-content-engine-case-study.pdf" download="Case_Study_Dubai_Blog_Content_Engine.pdf" data-pdf-open target="_blank" rel="noopener noreferrer" class="btn btn--case">
             Download Complete Technical Case Study (PDF)
             <svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
@@ -1884,14 +1930,14 @@ a.matrix__metric:hover { text-decoration: underline; }
         <article class="wf-card" data-tilt>
           <div class="wf-card__tag"><span class="dot"></span> n8n · Audit Engine</div>
           <div class="wf-card__media">
-            <img src="assets/website-audit-workflow.jpg"
+            <img src="website-audit-workflow.jpg"
                  alt="Automated website / property audit report workflow" loading="lazy" />
           </div>
           <h3 class="wf-card__title">Website Audit Report Workflow</h3>
           <p class="wf-card__desc">
             A daily audit that runs after each listing sync, checks the website and listings for errors, and emails the developer and admin team any issues.
           </p>
-          <a href="assets/website-audit-workflow-case-study.pdf" download="Case_Study_Real_Estate_Website_Audit_Workflow.pdf" class="btn btn--case">
+          <a href="website-audit-workflow-case-study.pdf" download="Case_Study_Real_Estate_Website_Audit_Workflow.pdf" class="btn btn--case">
             Download Complete Technical Case Study (PDF)
             <svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
@@ -1907,7 +1953,7 @@ a.matrix__metric:hover { text-decoration: underline; }
         <!-- Left — portrait -->
         <div class="about__media">
           <div class="about__photo-wrap">
-            <img src="assets/akash-portrait-profile.jpg" alt="Akash — Executive Profile" class="about__photo" loading="lazy" />
+            <img src="akash-portrait-profile.jpg" alt="Akash — Executive Profile" class="about__photo" loading="lazy" />
           </div>
         </div>
 
